@@ -18,7 +18,7 @@ This option is integrated within the main form.
 - **Total number of orders per staff:** Total number of orders for each staff member. Chart format: columns.
 - **Total number of products by category:** Number of products for each category. Chart format: pie.
 
-An external library is used for this: [library](https://lvcharts.net/)
+An external library is used for this: [lvcharts](https://lvcharts.net/)
 
 ## Project Requirements
 
