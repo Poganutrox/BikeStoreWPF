@@ -1,0 +1,121 @@
+﻿<Window x:Class="BikeStoreWPF.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:view="clr-namespace:BikeStoreWPF.UserControls"
+        mc:Ignorable="d"
+        Title="MainView" Height="600" Width="1000" Loaded="Window_Loaded" Closing="PreguntarSalida_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="513*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48*" x:Name="cMenu" />
+            <ColumnDefinition Width="227*" x:Name="cDashboard" />
+            <ColumnDefinition Width="716*"/>
+            <ColumnDefinition Width="9*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Height="65" VerticalAlignment="Top" Background="DodgerBlue" Grid.Row="0" Grid.ColumnSpan="4" Panel.ZIndex="1">
+            <Grid Width="1000">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="79*"/>
+                    <ColumnDefinition Width="625*"/>
+                    <ColumnDefinition Width="296*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Margin="0,0,19,0">
+                    <Button Height="40" BorderBrush="#00000000" Click="onClick" Cursor="Arrow">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/menu-custom.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+                <StackPanel Grid.Column="3" Orientation="Horizontal">
+                    <TextBlock Text="{Binding UsuarioRegistrado.FirstName, StringFormat='Hola, {0} |'}" Margin="0,30,0,0" 
+                               FontFamily="Arial Black" Foreground="White"></TextBlock>
+                    <Image Source="{Binding UsuarioRegistrado.ImageStaff}" Margin="10"></Image>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        <Grid x:Name="gMenu" Background="DodgerBlue" Grid.Column="0" Margin="0,71,0,0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="" BorderBrush="#00000000" Width="50" Height="40" Cursor="Arrow"
+                            Click="moveToDashboardUserControl_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/Images/monitor-dashboard-custom.png" Stretch="Uniform"/>
+                        </Button.Background>
+                        <Button.Foreground>
+                            <ImageBrush ImageSource="/View/Images/monitor-dashboard-custom.png" TileMode="None"/>
+                        </Button.Foreground>
+                    </Button>
+                    <Label x:Name="lbDashboard" Foreground="White" Height="30" Margin="10,0,0,0" FontFamily="Arial Black">Dashboard</Label>
+                </StackPanel>
+            </Grid>
+            <Grid  Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="" BorderBrush="#00000000" Foreground="#00000000" Width="50" Height="40" Cursor="Arrow"
+                            Click="moveToNoImplemented_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/Images/truck-custom.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Label x:Name="lbPedidos" Foreground="White" Height="30" Margin="10,0,0,0" FontFamily="Arial Black">Pedidos</Label>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="" Foreground="#00000000" BorderBrush="#00000000" Cursor="Arrow"
+                            Width="50" Height="40" Click="moveToProductUserControl_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/Images/bicycle-custom.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Label x:Name="lbProductos" Foreground="White" Height="30" Margin="10,0,0,0" FontFamily="Arial Black">Productos</Label>
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Row="3">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="" BorderBrush="#00000000" Width="50" Height="40" Cursor="Arrow"
+                            Click="moveToNoImplemented_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/Images/file-document-custom.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Label x:Name="lbInformes" Foreground="White" Height="30" Margin="10,0,0,0" FontFamily="Arial Black">Informes</Label>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="4">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="" BorderBrush="#00000000" Width="50" Height="40" Cursor="Arrow"
+                            Click="moveToNoImplemented_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/View/Images/account-custom.png" Stretch="Uniform"/>
+                        </Button.Background>
+                    </Button>
+                    <Label Foreground="White" Height="30" Margin="10,0,0,0" FontFamily="Arial Black">Empleados</Label>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="panel" Grid.Column="1" Margin="10,1,0,0" Grid.Row="1" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="115*"/>
+            </Grid.RowDefinitions>
+            <view:DashBoardUserControl x:Name="dashBoard" Grid.RowSpan="2"/>
+        </Grid>
+
+    </Grid>
+</Window>

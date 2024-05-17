@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\360_F_239990134_L85uPukbhSSizLHwfpTGIOnGKTHcNYRZ.jpg" />
+    <None Remove="View\account-custom.png" />
+    <None Remove="View\bicycle-custom.png" />
+    <None Remove="View\bike-custom.png" />
+    <None Remove="View\chart-bar-custom.png" />
+    <None Remove="View\exit-run-custom.png" />
+    <None Remove="View\file-document-custom.png" />
+    <None Remove="View\foto-pozuelo-interior-3.jpg" />
+    <None Remove="View\inspirational_cycling_quotes_poster-re7bc72595dd5450e8f7dfde0b1ee7512_wh5_8byvr_630.jpg" />
+    <None Remove="View\logo.jpg" />
+    <None Remove="View\menu-custom.png" />
+    <None Remove="View\monitor-dashboard-custom.png" />
+    <None Remove="View\percent-box-outline-custom.png" />
+    <None Remove="View\silhouette-design-of-mountain-for-decoration-free-vector.jpg" />
+    <None Remove="View\silverware-spoon-custom.png" />
+    <None Remove="View\truck-custom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\360_F_239990134_L85uPukbhSSizLHwfpTGIOnGKTHcNYRZ.jpg" />
+    <Resource Include="View\bike-custom.png" />
+    <Resource Include="View\exit-run-custom.png" />
+    <Resource Include="View\foto-pozuelo-interior-3.jpg" />
+    <Resource Include="View\Images\account-custom.png" />
+    <Resource Include="View\Images\bicycle-custom.png" />
+    <Resource Include="View\Images\chart-bar-custom.png" />
+    <Resource Include="View\Images\file-document-custom.png" />
+    <Resource Include="View\Images\logo.jpg" />
+    <Resource Include="View\Images\monitor-dashboard-custom.png" />
+    <Resource Include="View\Images\percent-box-outline-custom.png" />
+    <Resource Include="View\Images\silverware-spoon-custom.png" />
+    <Resource Include="View\Images\truck-custom.png" />
+    <Resource Include="View\inspirational_cycling_quotes_poster-re7bc72595dd5450e8f7dfde0b1ee7512_wh5_8byvr_630.jpg" />
+    <Resource Include="View\menu-custom.png" />
+    <Resource Include="View\silhouette-design-of-mountain-for-decoration-free-vector.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,92 @@
+﻿<Window x:Class="BikeStoreWPF.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BikeStoreWPF.View"
+        mc:Ignorable="d"
+        Title="Iniciar sesión" Height="400" Width="300" WindowStartupLocation="CenterScreen" Closing="PreguntarSalida_Closing">
+    <Window.Resources>
+        <Style x:Key="BotonAccion" TargetType="Button">
+            <Setter Property="Background" Value="#FFECB3"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Foreground" Value="#FF1364D4"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Arial Black"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+
+        <ControlTemplate x:Key="ValidationErrorTemplate2">
+            <StackPanel  Width="200">
+                <Border BorderBrush="Red" BorderThickness="1">
+                    <!-- Placeholder for the TextBox itself -->
+                    <AdornedElementPlaceholder x:Name="AdornedElement"/>
+                </Border>
+                <Border Background="White" BorderBrush="Red" Padding="4" BorderThickness="1,0,1,1" HorizontalAlignment="Left">
+                    <ItemsControl ItemsSource="{Binding}" HorizontalAlignment="Left">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ErrorContent}" FontSize="8" FontFamily="Arial Black" Foreground="Red"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="43*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10,14,10,9" 
+                    RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/View/foto-pozuelo-interior-3.jpg" Stretch="Fill" TileMode="Tile" Opacity="0.5"/>
+            </StackPanel.Background>
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.221"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.761"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Label Content="Usuario" FontFamily="Arial Black" Foreground="#FF1364D4" Width="200"/>
+            <ComboBox Name="Usuarios" Width="200" Margin="0,5,0,10"  ItemsSource="{Binding Usuarios}" SelectedItem="{Binding UsuarioSeleccionado}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Height="40">
+                            <Image Source="{Binding ImageStaff}" Stretch="Fill"/>
+                            <TextBlock Text="{Binding FirstName}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Label Content="Contraseña" FontFamily="Arial Black" Foreground="#FF1364D4" Width="200"/>
+            <PasswordBox Name="Password"  Width="200" Margin="0,5,0,15" PasswordChanged="Password_PasswordChanged"/>
+            <Button Content="Iniciar Sesión" Width="100"
+                    Style="{StaticResource ResourceKey=BotonAccion}"
+                    Command="{Binding IniciarSersionCommand}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"  Height="16" Margin="150,0,0,0">
+            <TextBlock Text="{Binding Intentos}" Foreground="Red"></TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="2" Margin="0,12,0,0" Grid.ColumnSpan="2">
+            <Image  Source="/View/inspirational_cycling_quotes_poster-re7bc72595dd5450e8f7dfde0b1ee7512_wh5_8byvr_630.jpg" VerticalAlignment="Top" HorizontalAlignment="Left" 
+        Width="50" Height="50" Margin="123,16,0,0" Panel.ZIndex="1"/>
+            <Image HorizontalAlignment="Left" Height="76" Margin="-8,56,0,0" VerticalAlignment="Top" Width="308" Source="/View/silhouette-design-of-mountain-for-decoration-free-vector.jpg"/>
+        </Grid>
+
+
+    </Grid>
+</Window>
