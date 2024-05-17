@@ -11,6 +11,9 @@ In the *dashboard*, a series of data related to the system state is displayed. T
 - Total number of Products with less than 10 units in Stock.
 - Amount of orders placed today by the logged-in user.
 - Display graphs that are described in more detail in the graphics section.
+  
+![image](https://github.com/Poganutrox/BikeStoreWPF/assets/63597815/cafc65a1-265c-4188-9bb1-f79920af2258)
+
 
 ## Graphics
 
